@@ -75,16 +75,17 @@ public class TravelAgency {
     }
     
     public boolean addTravel(Travel viaje){
-        boolean valor = false;
+        //boolean valor=false;
         for(int i = 0; i < offeredTravels.length; i ++){
-            if(viaje.equals(this.offeredTravels[i])){
-                valor = false;
-            }else{
-                this.offeredTravels[i] = viaje;
-                valor = true;
+            if (offeredTravels!=null){
+                if(!viaje.equals(this.offeredTravels[i])){
+                    this.offeredTravels[i] = viaje;
+                    return true;
+                    
+                }
             }
         }
-        return valor;
+        return false;
     }
     
     public boolean removeTravel(Travel viaje){
@@ -100,40 +101,46 @@ public class TravelAgency {
         return valor;
     }
     
-    public void informacionViajes(){
-        System.out.println("La información de los viajes es la siguiente:\n\n");
-        for (Travel offeredTravel : offeredTravels) {
-            System.out.println("Numero vuelo salida:\n" + 
-                    offeredTravel.getOutboundFlightNumber() + 
-                    "\nNombre Aeropuerto Salida:\n" + 
-                    offeredTravel.getOutboundAirport() + 
-                    "\nNumero vuelo llegada:\n" + 
-                    offeredTravel.getRetornoFlightNumber() + 
-                    "\nNombre Aeropuerto LLegada:\n" + 
-                    offeredTravel.getRetornoAirport() + "\n");
-        }
+    public String informacionViajes(){
+        String mensaje = "La información de los viajes es la siguiente:\n\n";
+        if (offeredTravels!=null){
+            for (Travel offeredTravel : offeredTravels) {
+                if (offeredTravel!=null){
+                mensaje+=offeredTravel.informacionViaje();
+                }
+            }
+        }   
+        return mensaje;
     }
     
     public void viajeMasLargo(){
         Travel viaje = new Travel(0,0,0,0);
+        if (offeredTravels!=null){
         for (Travel offeredTravel : offeredTravels) {
-            if (viaje.getDuration() < offeredTravel.getDuration()) {
-                viaje = offeredTravel;
+            if (offeredTravel!=null){
+                if (viaje.getDuration() < offeredTravel.getDuration()) {
+                    viaje = offeredTravel;
+                }
             }
         }
+        }
         System.out.println("El viaje más largo fue:\n" + 
-                viaje);
+                viaje.informacionViaje());
     }
     
     public void viajeMasCorto(){
         Travel viaje = new Travel(1000000000,0,0,0);
+        if (offeredTravels!=null){
         for (Travel offeredTravel : offeredTravels) {
+            if (offeredTravel!=null){
             if (viaje.getDuration() > offeredTravel.getDuration()) {
                 viaje = offeredTravel;
             }
+            }
+        }
         }
         System.out.println("El viaje más corto fue:\n" + 
-                viaje);
+                viaje.informacionViaje());
     }
 
     public String getName() {

@@ -32,6 +32,21 @@ public class Travel {
         this.retorno = book;
     }
     
+    public String informacionViaje (){
+        //String mensaje = "La información de los viajes es la siguiente:\n\n";
+        String mensaje = "Numero vuelo salida:\n" + 
+                this.getOutboundFlightNumber() + 
+                "\nNombre Aeropuerto Salida:\n" + 
+                this.getOutboundAirport() + 
+                "\nNumero vuelo llegada:\n" + 
+                this.getRetornoFlightNumber() + 
+                "\nNombre Aeropuerto LLegada:\n" + 
+                this.getRetornoAirport() +  
+                "\nDuracion del viaje: \n" + 
+                this.getDuration() + " min" + "\n";
+        return mensaje;
+    }
+    
     public int getDuration() {
         return duration;
     }

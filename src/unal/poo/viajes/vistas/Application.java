@@ -36,10 +36,11 @@ public class Application {
         viaje.addRetorno(vuelta);
         vuelta.setDestino(salida);
         vuelta.setOrigen(llegada);
+        agencia.addTravel(viaje);
         
         
         //tengo problemas con estos metodos
-        agencia.informacionViajes();
+        System.out.println(agencia.informacionViajes());
         agencia.viajeMasCorto();
         agencia.viajeMasLargo();
     }
