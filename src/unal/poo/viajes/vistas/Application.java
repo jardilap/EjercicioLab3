@@ -39,7 +39,63 @@ public class Application {
         agencia.addTravel(viaje);
         
         
-        //tengo problemas con estos metodos
+        
+        Hotel hotel2 = new Hotel("La Quintana", "Cra. 19a # 173 - 70");
+        Travel viaje2 = new Travel(31, 2017, 5, 22);
+        agencia.addHotel(hotel2);
+        GregorianCalendar departure3 = new GregorianCalendar(2017,5,22);
+        GregorianCalendar arrival3 = new GregorianCalendar(2017,5,22);
+        GregorianCalendar departure4 = new GregorianCalendar(2017,5,29);
+        GregorianCalendar arrival4 = new GregorianCalendar(2017,5,29);
+        BookedFlight ida2 = new BookedFlight(1356, departure3, arrival3);
+        BookedFlight vuelta2 = new BookedFlight(2345, departure4, arrival4);
+        ida2.setDestino(llegada);
+        ida2.setOrigen(salida);
+        viaje2.addOutbound(ida2);
+        viaje2.addRetorno(vuelta2);
+        vuelta2.setDestino(salida);
+        vuelta2.setOrigen(llegada);
+        agencia.addTravel(viaje2);
+        
+        
+        
+        
+        Travel viaje3 = new Travel(32, 2017, 7, 22);
+        agencia.addHotel(hotel);
+        GregorianCalendar departure5 = new GregorianCalendar(2017,7,22);
+        GregorianCalendar arrival5 = new GregorianCalendar(2017,7,22);
+        GregorianCalendar departure6 = new GregorianCalendar(2017,7,29);
+        GregorianCalendar arrival6 = new GregorianCalendar(2017,7,29);
+        BookedFlight ida3 = new BookedFlight(8754, departure5, arrival5);
+        BookedFlight vuelta3 = new BookedFlight(9876, departure6, arrival6);
+        ida3.setDestino(llegada);
+        ida3.setOrigen(salida);
+        viaje3.addOutbound(ida3);
+        viaje3.addRetorno(vuelta3);
+        vuelta3.setDestino(salida);
+        vuelta3.setOrigen(llegada);
+        agencia.addTravel(viaje3);
+        
+        
+        
+        Hotel hotel3 = new Hotel("Gran Oasis", "Cra. 5a # 100a - 58");
+        Travel viaje4 = new Travel(33, 2017, 9, 22);
+        agencia.addHotel(hotel3);
+        GregorianCalendar departure7 = new GregorianCalendar(2017,9,22);
+        GregorianCalendar arrival7 = new GregorianCalendar(2017,9,22);
+        GregorianCalendar departure8 = new GregorianCalendar(2017,9,29);
+        GregorianCalendar arrival8 = new GregorianCalendar(2017,9,29);
+        BookedFlight ida4 = new BookedFlight(2346, departure7, arrival7);
+        BookedFlight vuelta4 = new BookedFlight(7568, departure8, arrival8);
+        ida4.setDestino(llegada);
+        ida4.setOrigen(salida);
+        viaje4.addOutbound(ida4);
+        viaje4.addRetorno(vuelta4);
+        vuelta4.setDestino(salida);
+        vuelta4.setOrigen(llegada);
+        agencia.addTravel(viaje4);
+        
+        
         System.out.println(agencia.informacionViajes());
         agencia.viajeMasCorto();
         agencia.viajeMasLargo();

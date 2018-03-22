@@ -33,7 +33,6 @@ public class Travel {
     }
     
     public String informacionViaje (){
-        //String mensaje = "La información de los viajes es la siguiente:\n\n";
         String mensaje = "Numero vuelo salida:\n" + 
                 this.getOutboundFlightNumber() + 
                 "\nNombre Aeropuerto Salida:\n" + 
