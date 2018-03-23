@@ -23,77 +23,75 @@ public class TravelAgency {
     }
     
     public boolean addHotel(Hotel hotel){
-        boolean valor = false;
         for(int i = 0; i < knownHotels.length; i ++){
             if(hotel.equals(this.knownHotels[i])){
-                valor = false;
+                return false;
             }else{
                 this.knownHotels[i] = hotel;
-                valor = true;
+                return true;
             }
         }
-        return valor;
+        return false;
     }
     
     public boolean removeHotel(Hotel hotel){
-        boolean valor = false;
         for(int i = 0; i < knownHotels.length; i ++){
             if(hotel.equals(this.knownHotels[i])){
                 this.knownHotels[i] = null;
-                valor = true;
+                return true;
             }else{
-                valor = false;
+                return false;
             }
         }
-        return valor;
+        return false;
     }
     
     public boolean addAirport(Airport aeropuerto){
-        boolean valor = false;
         for(int i = 0; i < airports.length; i ++){
             if(aeropuerto.equals(this.airports[i])){
-                valor = false;
+                return false;
             }else{
                 this.airports[i] = aeropuerto;
-                valor = true;
+                return true;
             }
         }
-        return valor;
+        return false;
     }
     
     public boolean removeAirport(Airport aeropuerto){
-        boolean valor = false;
         for(int i = 0; i < airports.length; i ++){
             if(aeropuerto.equals(this.airports[i])){
                 this.airports[i] = null;
-                valor = true;
+                return true;
             }else{
-                valor = false;
+                return false;
             }
         }
-        return valor;
+        return false;
     }
     
     public boolean addTravel(Travel viaje){
-        if(offeredTravels.length<10){
-            int ultimo = offeredTravels.length+1;
-            this.offeredTravels[ultimo] = viaje;
-            return true;
+        for(int i = 0; i < offeredTravels.length; i ++){
+            if(viaje.equals(this.offeredTravels[i])){
+                return false;
+            }else{
+                this.offeredTravels[i] = viaje;
+                return true;
+            }
         }
         return false;
     }
     
     public boolean removeTravel(Travel viaje){
-        boolean valor = false;
         for(int i = 0; i < offeredTravels.length; i ++){
             if(viaje.equals(this.offeredTravels[i])){
                 this.offeredTravels[i] = null;
-                valor = true;
+                return true;
             }else{
-                valor = false;
+                return false;
             }
         }
-        return valor;
+        return false;
     }
     
     public String informacionViajes(){
