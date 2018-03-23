@@ -24,9 +24,7 @@ public class TravelAgency {
     
     public boolean addHotel(Hotel hotel){
         for(int i = 0; i < knownHotels.length; i ++){
-            if(hotel.equals(this.knownHotels[i])){
-                return false;
-            }else{
+            if(this.knownHotels[i]==null){
                 this.knownHotels[i] = hotel;
                 return true;
             }
@@ -39,8 +37,6 @@ public class TravelAgency {
             if(hotel.equals(this.knownHotels[i])){
                 this.knownHotels[i] = null;
                 return true;
-            }else{
-                return false;
             }
         }
         return false;
@@ -48,9 +44,7 @@ public class TravelAgency {
     
     public boolean addAirport(Airport aeropuerto){
         for(int i = 0; i < airports.length; i ++){
-            if(aeropuerto.equals(this.airports[i])){
-                return false;
-            }else{
+            if(this.airports[i]==null){
                 this.airports[i] = aeropuerto;
                 return true;
             }
@@ -72,9 +66,7 @@ public class TravelAgency {
     
     public boolean addTravel(Travel viaje){
         for(int i = 0; i < offeredTravels.length; i ++){
-            if(viaje.equals(this.offeredTravels[i])){
-                return false;
-            }else{
+            if(this.offeredTravels[i]==null){
                 this.offeredTravels[i] = viaje;
                 return true;
             }
