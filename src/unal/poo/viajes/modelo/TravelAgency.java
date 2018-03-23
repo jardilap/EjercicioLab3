@@ -91,7 +91,8 @@ public class TravelAgency {
         if (offeredTravels!=null){
             for (int i = 0; i<offeredTravels.length; i++) {
                 if (offeredTravels[i]!=null){
-                mensaje+="Viaje "+ (i+1) + ":\n" +offeredTravels[i].informacionViaje() + "\n";
+                mensaje+="Viaje "+ (i+1) + ":\n" +
+                        offeredTravels[i].informacionViaje() + "\n";
                 }
             }
         }   
