@@ -17,11 +17,12 @@ public class Travel {
     private BookedFlight retorno;
     private GregorianCalendar cero = new GregorianCalendar(0,0,0);
 
-    public Travel(int duration, int year, int month, int date) {
+    public Travel(int duration, int year, int month, int date, Hotel hotel) {
         this.duration = duration;
         this.start = new GregorianCalendar(year, month, date);
         this.outbound = new BookedFlight(0,cero,cero);
         this.retorno = new BookedFlight(0,cero,cero);
+        this.hotel = hotel;
     }
     
     public void addOutbound(BookedFlight book){

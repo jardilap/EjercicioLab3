@@ -100,7 +100,7 @@ public class TravelAgency {
     }
     
     public void viajeMasLargo(){
-        Travel viaje = new Travel(0,0,0,0);
+        Travel viaje = new Travel(0,0,0,0, null);
         if (offeredTravels!=null){
         for (int i = 0; i<offeredTravels.length; i++) {
             if (offeredTravels[i]!=null){
@@ -115,7 +115,7 @@ public class TravelAgency {
     }
     
     public void viajeMasCorto(){
-        Travel viaje = new Travel(1000000000,0,0,0);
+        Travel viaje = new Travel(1000000000,0,0,0, null);
         if (offeredTravels!=null){
         for (int i = 0; i<offeredTravels.length; i++) {
             if (offeredTravels[i]!=null){
