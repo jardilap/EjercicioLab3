@@ -63,17 +63,17 @@ public class Application {
             switch(opcion){
                 case 1:
                     //Ingresar Aeropuerto
-                    System.out.println("Ingresa nombre del aeropuerto:\n");
-                    String nombreAir = teclado.next();
+                    System.out.print("Ingresa nombre del aeropuerto:\n");
+                    String nombreAir = teclado.nextLine();
                     Airport a1 = new Airport(nombreAir);
                     agencia.addAirport(a1);
                     break;
                 case 2:
                     //Ingresar hotel
-                    System.out.println("Ingrese nombre del hotel:\n");
-                    String nombreHotel = teclado.next();
-                    System.out.println("Ingrese direccion Hotel:\n");
-                    String direccionHotel = teclado.next();
+                    System.out.print("Ingrese nombre del hotel:\n");
+                    String nombreHotel = teclado.nextLine();
+                    System.out.print("Ingrese direccion Hotel:\n");
+                    String direccionHotel = teclado.nextLine();
                     Hotel h1 = new Hotel(nombreHotel, direccionHotel);
                     agencia.addHotel(h1);
                     break;
